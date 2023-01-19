@@ -10,19 +10,54 @@ namespace DeletePlugin
 {
     public class DelPlugin : IPlugin
     {
+ 
         public void yaswanth(IServiceProvider serviceProvider){
                     String name = "Yaswanth";
         }
         public void Lalith(int a,int b){
             int c = a*b;
         }
-        public void anusha(IServiceProvider serviceProvider){
-            string name ="anusha";
-             string decs = (string)LeadRec["description"];
-
-                DateTime F7 = (DateTime)LeadRec["new_f7"];
-                DateTime S7 = (DateTime)LeadRec["new_s7"];
+        
+        public void Kiran(int a, int b, int c)
+        {
+            int d = a+b+c;
+            string k = "Kiran";
         }
+        public void Swetha(int x, int y,int z)
+        {
+            int z = x-y;
+        }
+        public void ThotaSairam(int x, int y,int z)
+        {
+            int z = x/y;
+        }
+        public void Santosh(int x, int y,int z)
+        {
+            int z = x%y;
+        }
+        public void Manoj()
+        {
+             Console.WriteLine("plugin changed");
+        }
+        public void Anusha(int x, int y,int z)
+        {
+            int z = x+y+x;
+        }
+        
+ 
+        public void Kamala(IServiceProvider serviceProvider){
+                    String name = "Kamala";
+                    String name = "didla";
+        }
+        
+        String name :"sairam"
+        
+           public void sairam(int a,int b)
+           {
+            int c = a+b;
+           }
+
+>>>>>>> 44c937e549467644d8a6ce14e27f994e1dbcbcf8:DeletePlugin/DeletePlugin/FunctionUpdate.cs
 
         public void Execute(IServiceProvider serviceProvider)
         {
