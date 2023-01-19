@@ -16,6 +16,15 @@ namespace DeletePlugin
         public void Lalith(int a,int b){
             int c = a*b;
         }
+        
+        
+        String name :"sairam"
+        
+           public void sairam(int a,int b)
+           {
+            int c = a+b;
+           }
+
 
         public void Execute(IServiceProvider serviceProvider)
         {
