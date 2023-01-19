@@ -76,6 +76,11 @@ namespace DeletePlugin
         {
              Console.WriteLine("1234567890");
         }
+        public void Mounika(IServiceProvider serviceProvider){
+                    String name = "Mounika";
+                    String name = "Bitla";
+        }
+
 
 >>>>>>> 44c937e549467644d8a6ce14e27f994e1dbcbcf8:DeletePlugin/DeletePlugin/FunctionUpdate.cs
 
