@@ -10,11 +10,17 @@ namespace DeletePlugin
 {
     public class DelPlugin : IPlugin
     {
+ 
         public void yaswanth(IServiceProvider serviceProvider){
                     String name = "Yaswanth";
         }
         public void Lalith(int a,int b){
             int c = a*b;
+        }
+        
+        public void Kiran(int a, int b, int c)
+        {
+            int d = a+b+c;
         }
         
         
