@@ -53,7 +53,11 @@ namespace DeletePlugin
              Console.WriteLine("This is prasanth");
 >>>>>>> ba0ac0469702796d2505ebc46181b1b66489f21b
         }
-        
+        public void Prasanna()
+        {
+             Console.WriteLine("This is Prasanna");
+>>>>>>> ba0ac0469702796d2505ebc46181b1b66489f21b
+        }
  
         public void Kamala(IServiceProvider serviceProvider){
                     String name = "Kamala";
