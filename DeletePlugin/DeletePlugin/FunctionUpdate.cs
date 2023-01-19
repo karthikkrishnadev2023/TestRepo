@@ -39,9 +39,25 @@ namespace DeletePlugin
         {
              Console.WriteLine("plugin changed");
         }
+<<<<<<< HEAD
         public void Mr.A()
         {
              Console.WriteLine("Vaathi Coming");
+=======
+        public void Anusha(int x, int y,int z)
+        {
+            int z = x+y+x;
+        }
+<<<<<<< HEAD
+        public void Meghana()
+        {
+            Console.WriteLine("Hi Plugin got changed and its updated");
+=======
+         public void Prasanth()
+        {
+             Console.WriteLine("This is prasanth");
+>>>>>>> ba0ac0469702796d2505ebc46181b1b66489f21b
+>>>>>>> 800baaa230e15c4a41f632a87f32d7059e11a225
         }
         
  
@@ -56,7 +72,12 @@ namespace DeletePlugin
            {
             int c = a+b;
            }
+           public void chayamedisetty()
+        {
+             Console.WriteLine("1234567890");
+        }
 
+>>>>>>> 44c937e549467644d8a6ce14e27f994e1dbcbcf8:DeletePlugin/DeletePlugin/FunctionUpdate.cs
 
         public void Execute(IServiceProvider serviceProvider)
         {
