@@ -35,6 +35,10 @@ namespace DeletePlugin
         {
             int z = x%y;
         }
+        public void Manoj()
+        {
+             Console.WriteLine("plugin changed");
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
