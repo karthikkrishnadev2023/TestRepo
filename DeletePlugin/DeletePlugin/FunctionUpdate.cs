@@ -21,6 +21,7 @@ namespace DeletePlugin
         public void Kiran(int a, int b, int c)
         {
             int d = a+b+c;
+            string k = "Kiran";
         }
         public void Swetha(int x, int y,int z)
         {
@@ -34,6 +35,7 @@ namespace DeletePlugin
  
         public void Kamala(IServiceProvider serviceProvider){
                     String name = "Kamala";
+                    String name = "didla";
         }
         
         String name :"sairam"
