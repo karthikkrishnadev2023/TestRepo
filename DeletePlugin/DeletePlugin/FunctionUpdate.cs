@@ -43,6 +43,10 @@ namespace DeletePlugin
         {
             int z = x+y+x;
         }
+         public void Prasanth()
+        {
+             Console.WriteLine("This is prasanth");
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
