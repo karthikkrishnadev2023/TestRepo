@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+
 namespace PluginEnvVarOneSuper
 {
-    public class PluginEnv : IPlugin
+    public class KarthikPlugin : IPlugin
     {
         static IReadOnlyDictionary<string, string> EnvVariables;
         //static readonly object Lock = new();
@@ -20,12 +23,15 @@ namespace PluginEnvVarOneSuper
             Entity Record = null;
             if (context.InputParameters.Contains("Target"))
             {
-                Record = (Entity)context.InputParameters["Target"];
+                Record2 = (Entity)context.InputParameters["Target"];
             }
 
-            tracingservice.Trace("START");
+
 
             tracingservice.Trace($"Try getting av_myvariable from environment variables");
+
+            var x = 10;
+
 
             if (EnvVariables == null)
             {
