@@ -26,6 +26,10 @@ namespace DeletePlugin
         {
             int z = x-y;
         }
+        public void ThotaSairam(int x, int y,int z)
+        {
+            int z = x/y;
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
