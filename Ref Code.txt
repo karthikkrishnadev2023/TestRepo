@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+
+namespace PluginEnvVarOneSuper
+{
+    public class PluginEnv : IPlugin
+    {
+        static IReadOnlyDictionary<string, string> EnvVariables;
+        //static readonly object Lock = new();
+        public void Execute(IServiceProvider serviceProvider)
+        {
+            IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
+            IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
+            IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
+            ITracingService tracingservice = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+
+            Entity Record = null;
+            if (context.InputParameters.Contains("Target"))
+            {
+                Record = (Entity)context.InputParameters["Target"];
+            }
+
+            tracingservice.Trace("START");
+
+            tracingservice.Trace($"Try getting av_myvariable from environment variables");
+
+            if (EnvVariables == null)
+            {
+                tracingservice.Trace($"Load environment variables");
+                var envVariables = new Dictionary<string, string>();
+
+                var query = new QueryExpression("environmentvariabledefinition")
+                {
+                    ColumnSet = new ColumnSet("statecode", "defaultvalue", "valueschema",
+                      "schemaname", "environmentvariabledefinitionid", "type"),
+                    LinkEntities =
+                        {
+                            new LinkEntity
+                            {
+                                JoinOperator = JoinOperator.LeftOuter,
+                                LinkFromEntityName = "environmentvariabledefinition",
+                                LinkFromAttributeName = "environmentvariabledefinitionid",
+                                LinkToEntityName = "environmentvariablevalue",
+                                LinkToAttributeName = "environmentvariabledefinitionid",
+                                Columns = new ColumnSet("statecode", "value", "environmentvariablevalueid"),
+                                EntityAlias = "v"
+                            }
+                        }
+                };
+
+                EntityCollection results = service.RetrieveMultiple(query);
+                if (results?.Entities.Count > 0)
+                {
+                    foreach (Entity entity in results.Entities)
+                    {
+                        var schemaName = entity.GetAttributeValue<string>("schemaname");
+                        var value = entity.GetAttributeValue<AliasedValue>("v.value")?.Value?.ToString();
+                        var defaultValue = entity.GetAttributeValue<string>("defaultvalue");
+
+                        tracingservice.Trace($"- schemaName:{schemaName}, value:{value}, defaultValue:{defaultValue}");
+                        if (schemaName != null && !envVariables.ContainsKey(schemaName))
+                            envVariables.Add(schemaName, string.IsNullOrEmpty(value) ? defaultValue : value);
+                    }
+                }
+
+                EnvVariables = envVariables;
+
+                string EnvVal = EnvVariables["cr8eb_EnvVarOne"];
+
+                tracingservice.Trace("Val : " + EnvVal);
+
+                Entity LeadRec = new Entity("lead");
+                LeadRec.Id = Record.Id;
+                LeadRec["description"] = "KEY: " + "cr8eb_EnvVarOne" + "\n" + "VAL: " + EnvVal.ToString();
+                service.Update(LeadRec);
+
+                tracingservice.Trace("END");
+
+            }
+
+        }
+
+
+        public Dictionary<string, string> getEnvVar(IServiceProvider serviceProvider, IOrganizationService ctx, ITracingService tctx)
+        {
+            tctx.Trace($"Try getting av_myvariable from environment variables");
+
+            if (EnvVariables == null)
+            {
+                tctx.Trace($"Load environment variables");
+                var envVariables = new Dictionary<string, string>();
+
+                var query = new QueryExpression("environmentvariabledefinition")
+                {
+                    ColumnSet = new ColumnSet("statecode", "defaultvalue", "valueschema",
+                      "schemaname", "environmentvariabledefinitionid", "type"),
+                    LinkEntities =
+                        {
+                            new LinkEntity
+                            {
+                                JoinOperator = JoinOperator.LeftOuter,
+                                LinkFromEntityName = "environmentvariabledefinition",
+                                LinkFromAttributeName = "environmentvariabledefinitionid",
+                                LinkToEntityName = "environmentvariablevalue",
+                                LinkToAttributeName = "environmentvariabledefinitionid",
+                                Columns = new ColumnSet("statecode", "value", "environmentvariablevalueid"),
+                                EntityAlias = "v"
+                            }
+                        }
+                };
+
+                EntityCollection results = ctx.RetrieveMultiple(query);
+                if (results?.Entities.Count > 0)
+                {
+                    foreach (Entity entity in results.Entities)
+                    {
+                        var schemaName = entity.GetAttributeValue<string>("schemaname");
+                        var value = entity.GetAttributeValue<AliasedValue>("v.value")?.Value?.ToString();
+                        var defaultValue = entity.GetAttributeValue<string>("defaultvalue");
+
+                        tctx.Trace($"- schemaName:{schemaName}, value:{value}, defaultValue:{defaultValue}");
+                        if (schemaName != null && !envVariables.ContainsKey(schemaName))
+                            envVariables.Add(schemaName, string.IsNullOrEmpty(value) ? defaultValue : value);
+                    }
+                }
+
+                EnvVariables = envVariables;
+            }
+
+            return (Dictionary<string, string>)EnvVariables;
+        }
+    }
+}
+
+    
