@@ -23,6 +23,10 @@ namespace DeletePlugin
             int d = a+b+c;
         }
         
+ 
+        public void Kamala(IServiceProvider serviceProvider){
+                    String name = "Kamala";
+        }
         
         String name :"sairam"
         
