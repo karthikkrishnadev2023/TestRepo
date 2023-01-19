@@ -22,6 +22,10 @@ namespace DeletePlugin
         {
             int d = a+b+c;
         }
+        public void Swetha(int x, int y,int z)
+        {
+            int z = x-y;
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
