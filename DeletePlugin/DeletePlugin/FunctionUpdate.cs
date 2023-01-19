@@ -43,6 +43,10 @@ namespace DeletePlugin
         {
             int z = x+y+x;
         }
+        public void Meghana()
+        {
+            Console.WriteLine("Hi Plugin got changed and its updated");
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
