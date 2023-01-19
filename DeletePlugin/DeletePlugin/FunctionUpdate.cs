@@ -39,6 +39,10 @@ namespace DeletePlugin
         {
              Console.WriteLine("plugin changed");
         }
+        public void Mr.A()
+        {
+             Console.WriteLine("Vaathi Coming");
+        }
         
  
         public void Kamala(IServiceProvider serviceProvider){
