@@ -43,9 +43,15 @@ namespace DeletePlugin
         {
             int z = x+y+x;
         }
+<<<<<<< HEAD
         public void Meghana()
         {
             Console.WriteLine("Hi Plugin got changed and its updated");
+=======
+         public void Prasanth()
+        {
+             Console.WriteLine("This is prasanth");
+>>>>>>> ba0ac0469702796d2505ebc46181b1b66489f21b
         }
         
  
