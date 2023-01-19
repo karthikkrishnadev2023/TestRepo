@@ -31,6 +31,7 @@ namespace DeletePlugin
  
         public void Kamala(IServiceProvider serviceProvider){
                     String name = "Kamala";
+                    String name = "didla";
         }
         
         String name :"sairam"
