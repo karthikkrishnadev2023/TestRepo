@@ -1,0 +1,7 @@
+client id: cbdb30c5-72a7-41f3-8515-d496d5627bd8
+
+htps://login.microsoftonline.om/common/oauth2/authorize?resource=https://techxact585.crm.dynamics.com/
+
+redirect URL : http://localhost
+
+https://techxact585.api.crm.dynamics.com/api/data/v9.2/

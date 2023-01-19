@@ -1,0 +1,35 @@
+Console.WriteLine("Student created with ID" + employeeId);
+// Create contact
+// RetriveContacts(crmServiceClient);
+// Create_Oppurtunity(crmServiceClient);
+
+
+// OppurtunityStatus(crmServiceClient);
+// UpdatePC_MP(crmServiceClient);
+// Close_Activity(crmServiceClient);
+// GetLeadRecords(crmServiceClient);
+// DuplicateContactCheck(crmServiceClient);
+// GetContactsRelToAccount(crmServiceClient);
+// CloseOpenActivities_CurrentUser(crmServiceClient);
+// CreateAndSendEmail(crmServiceClient);
+// Assign_ContactsOwnership(crmServiceClient);
+// UpdateAccount_RandomNumber(crmServiceClient);
+// Adding_ContactsToCC(crmServiceClient);
+// Users_SecurityRoles(crmServiceClient);
+// EnabledUsers_TeamNames(crmServiceClient);
+// Accounts_PrimaryContact(crmServiceClient);
+// Contacts_AccNameEmailAdd(crmServiceClient);
+// EnabledUsers_SecurityRoles1(crmServiceClient);
+// EnabledUsers_TeamNames1(crmServiceClient);
+// Accounts_PrimaryContact1(crmServiceClient);
+// Contacts_AccNameEmailAdd1(crmServiceClient);
+// AttachLocalFile(crmServiceClient);
+
+
+daily event 
+ 9 to 1
+mention from monday 930..
+
+me, deepak sir, 
+
+optional..
