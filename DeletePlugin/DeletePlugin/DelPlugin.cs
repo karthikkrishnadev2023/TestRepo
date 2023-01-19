@@ -10,12 +10,17 @@ namespace DeletePlugin
 {
     public class DelPlugin : IPlugin
     {
+    public void prasanth()
+    {
+    Console.Write("This is Prasanth method");
+    }
         public void Execute(IServiceProvider serviceProvider)
         {
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
             ITracingService tracingservice = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+            
 
             EntityReference EntRec = null;
             if (context.InputParameters.Contains("Target"))
@@ -45,6 +50,7 @@ namespace DeletePlugin
                     return;
                 }
             }
+           
             
 
             
