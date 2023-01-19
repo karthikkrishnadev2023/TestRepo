@@ -13,7 +13,7 @@ namespace DeletePlugin
         public void yaswanth(IServiceProvider serviceProvider){
                     String name = "Yaswanth";
         }
-        public void multipy(int a,int b){
+        public void Lalith(int a,int b){
             int c = a*b;
         }
 
