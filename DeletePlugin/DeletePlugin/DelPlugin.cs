@@ -10,6 +10,10 @@ namespace DeletePlugin
 {
     public class DelPlugin : IPlugin
     {
+        public void yaswanth(IServiceProvider serviceProvider){
+                    String name = "Yaswanth";
+        }
+
         public void Execute(IServiceProvider serviceProvider)
         {
             IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
@@ -45,6 +49,8 @@ namespace DeletePlugin
                     return;
                 }
             }
+
+            
             
 
             
