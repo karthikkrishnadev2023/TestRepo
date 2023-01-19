@@ -13,6 +13,9 @@ namespace DeletePlugin
         public void yaswanth(IServiceProvider serviceProvider){
                     String name = "Yaswanth";
         }
+        public void multipy(int a,int b){
+            int c = a*b;
+        }
 
         public void Execute(IServiceProvider serviceProvider)
         {
