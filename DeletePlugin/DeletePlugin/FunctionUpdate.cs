@@ -39,6 +39,11 @@ namespace DeletePlugin
         {
              Console.WriteLine("plugin changed");
         }
+<<<<<<< HEAD
+        public void Mr.A()
+        {
+             Console.WriteLine("Vaathi Coming");
+=======
         public void Anusha(int x, int y,int z)
         {
             int z = x+y+x;
@@ -52,6 +57,7 @@ namespace DeletePlugin
         {
              Console.WriteLine("This is prasanth");
 >>>>>>> ba0ac0469702796d2505ebc46181b1b66489f21b
+>>>>>>> 800baaa230e15c4a41f632a87f32d7059e11a225
         }
         public void Prasanna()
         {
