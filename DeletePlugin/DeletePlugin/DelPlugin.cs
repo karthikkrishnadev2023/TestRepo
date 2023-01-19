@@ -16,6 +16,13 @@ namespace DeletePlugin
         public void Lalith(int a,int b){
             int c = a*b;
         }
+        public void anusha(IServiceProvider serviceProvider){
+            string name ="anusha";
+             string decs = (string)LeadRec["description"];
+
+                DateTime F7 = (DateTime)LeadRec["new_f7"];
+                DateTime S7 = (DateTime)LeadRec["new_s7"];
+        }
 
         public void Execute(IServiceProvider serviceProvider)
         {
